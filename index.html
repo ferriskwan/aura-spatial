@@ -1,13 +1,276 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>myapp</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!-- Atelier Marketplace - Mid-Century Modern Aesthetic -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Spatial | Mid-Century Modern Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Public+Sans:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1e1c11",
+                        "on-surface": "#1b1c1a",
+                        "surface": "#fbf9f5",
+                        "on-tertiary-fixed-variant": "#49454e",
+                        "on-primary-container": "#696557",
+                        "secondary-container": "#e4e2e1",
+                        "tertiary-container": "#e8e1ec",
+                        "surface-container-high": "#eae8e4",
+                        "tertiary": "#615d66",
+                        "surface-bright": "#fbf9f5",
+                        "secondary-fixed": "#e4e2e1",
+                        "primary-fixed": "#e9e2d1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#efeeea",
+                        "on-tertiary-container": "#68636c",
+                        "surface-container-low": "#f5f3ef",
+                        "outline-variant": "#cbc6bb",
+                        "tertiary-fixed": "#e7e0eb",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ccc6b6",
+                        "on-surface-variant": "#49473f",
+                        "inverse-surface": "#30312e",
+                        "on-tertiary-fixed": "#1d1a22",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-secondary-container": "#656464",
+                        "secondary": "#5f5e5e",
+                        "primary-container": "#eae3d2",
+                        "primary": "#625e51",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-variant": "#e4e2de",
+                        "surface-dim": "#dbdad6",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#625e51",
+                        "outline": "#7b776e",
+                        "background": "#fbf9f5",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1a",
+                        "tertiary-fixed-dim": "#cbc4cf",
+                        "on-primary-fixed-variant": "#4a473a",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#ccc6b6",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "64px",
+                        "unit": "8px",
+                        "grid-columns": "12",
+                        "grid-gutter": "32px",
+                        "element-gap": "24px",
+                        "container-padding": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "heritage-heading": ["Libre Caslon Text"],
+                        "body-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "industrial-mono": ["JetBrains Mono"],
+                        "label-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "display-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "heritage-heading": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "300"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "industrial-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .mcm-shadow {
+            box-shadow: 4px 4px 0px 0px #49473f;
+        }
+        .mcm-shadow-sm {
+            box-shadow: 2px 2px 0px 0px #49473f;
+        }
+        .mcm-accent-mustard { background-color: #E1AD01; color: #1b1c1a; }
+        .mcm-accent-orange { background-color: #C04000; color: #ffffff; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b-2 border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-container-padding h-20 w-full max-w-[1440px] mx-auto">
+<h1 class="font-heritage-heading text-headline-lg text-primary dark:text-inverse-primary tracking-tight">Aura Spatial</h1>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-heritage-heading text-headline-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Gallery</a>
+<a class="font-heritage-heading text-headline-md text-primary dark:text-inverse-primary border-b-2 border-primary pb-1" href="#">Collections</a>
+<a class="font-heritage-heading text-headline-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Curated</a>
+<a class="font-heritage-heading text-headline-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-2 border-outline-variant rounded-lg focus:ring-0 focus:border-primary w-64" placeholder="Search furniture..." type="text"/>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all" data-icon="shopping_bag">shopping_bag</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all" data-icon="palette">palette</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all md:hidden" data-icon="menu">menu</span>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-20">
+<!-- SideNavBar -->
+<aside class="h-full w-72 fixed left-0 top-20 z-40 bg-surface-container-low dark:bg-surface-container-high border-r border-outline-variant hidden lg:flex flex-col p-6 gap-4">
+<div class="mb-8">
+<h3 class="font-heritage-heading text-headline-md text-primary">Aesthetic Switcher</h3>
+<p class="font-industrial-mono text-label-md text-on-surface-variant">Select your era</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="spa">spa</span> Japandi
+                </a>
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container font-bold rounded-lg px-4 py-3 translate-x-1 duration-200 font-industrial-mono text-label-md mcm-shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="chair">chair</span> Mid-Century
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span> Heritage
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="factory">factory</span> Industrial
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="edit">edit</span> Custom
+                </a>
+</div>
+<div class="mt-auto pt-6">
+<button class="w-full mcm-accent-orange font-industrial-mono text-label-md py-4 rounded-lg mcm-shadow hover:scale-[1.02] transition-transform">
+                    Request Consultation
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-72 min-h-screen">
+<section class="px-container-padding py-12 max-w-[1440px] mx-auto">
+<!-- Hero -->
+<div class="relative w-full h-[500px] mb-section-gap rounded-lg overflow-hidden mcm-shadow group">
+<img alt="Mid-Century Interior" class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated mid-century modern living room featuring a rich teak wood sideboard and a classic Eames-style lounge chair. The space is illuminated by warm, direct sunlight casting geometric shadows across a cream-colored wool rug. The walls are a soft off-white, and the room is decorated with a large Monstera plant and a mustard yellow abstract art piece. The overall mood is quiet, architectural, and expertly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPp0lr7tzVuEgSO_J-q5iKQEDLJ1hvo8kqK9bvv4rwIPpc8y-pBr_7GmiUS_6E_UrrpyexEYC2zdGWo1XMMkJcB6TUuUGGFpaSL2v0I8aDyuU2XUYkNFewOY9XT36R9R2uWrJQiWCXFXKJDv9fanAZsYBPiGWGeEgK-a8W2qTsBSl33nl1N_MFaXB_U8KF8MEarb_Zp8w41CtgWyx8C6T7SRDejFXHjkDsTXsYiRGUBSQFKsv9BgMYTtlOyTm4SGku_etIEOHYf7E"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-surface/60 to-transparent flex flex-col justify-center px-16">
+<span class="mcm-accent-mustard inline-block px-4 py-1 rounded-full text-label-md font-industrial-mono w-fit mb-6">Seasonal Drop</span>
+<h2 class="font-headline-lg text-[64px] text-surface leading-tight mb-6 max-w-2xl">Functionality <br/>Meets Form.</h2>
+<button class="bg-surface text-on-surface font-industrial-mono px-8 py-4 rounded-lg w-fit mcm-shadow-sm hover:mcm-shadow transition-all">Explore Heritage Collection</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="mb-12">
+<h3 class="font-heritage-heading text-display-lg text-primary mb-8 border-b-4 border-primary-container pb-4 w-fit">Featured Inventory</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low rounded-lg overflow-hidden mb-6 mcm-shadow border-2 border-outline-variant relative">
+<img alt="Walnut Sideboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A meticulously crafted walnut wood sideboard with elegant tapered legs and minimalist sliding doors. The wood grain is prominent and rich with warm tones. The piece is set against a clean, off-white gallery wall in a bright, airy space. Natural light highlights the smooth surface and structural precision of the mid-century design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe8t0SHqQ65k7rOH1geQ4byMv0esYT0TbtzHCUuERUjPHcsOhyL5rn9arM3ihRe5s9n5rG-FbbiMFuEVVGKsnyVpxouJUXfUD-7THVvw2kLnwpeFO35YjkbpOSsblPrug3vXJdMMOJokHJUe_y4G_ahY3H8beuskKXmborZowrp2MKc3EhAEPCK_j_U4bHBEMI-pto0QGGUa4qMg7IQSXuqNXUlORRkjZwDePVBAeFvVShRlEyElcZlWSJMEYQbcU0cKrGVCptvWE"/>
+<span class="absolute top-4 right-4 bg-surface px-3 py-1 rounded-lg mcm-shadow-sm font-industrial-mono text-label-md">New</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Walnut Sideboard</h4>
+<p class="font-industrial-mono text-label-md text-on-surface-variant">Heritage Oak &amp; Walnut</p>
+</div>
+<span class="font-headline-md text-primary">$2,450</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low rounded-lg overflow-hidden mb-6 mcm-shadow border-2 border-outline-variant relative">
+<img alt="Burnt Orange Lounge" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A plush, burnt orange velvet lounge chair with a sculptural dark wood frame. The chair's bold color pops against a minimalist, cream-colored room background. The lighting is soft and cinematic, emphasizing the texture of the velvet and the elegant curves of the mid-century silhouette. The atmosphere is warm, inviting, and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctuqrBS1ShGqeGqsBd43kKJIe1XKJguRB05EUyBhtO3XLsYvSiV_LkxsF1mtt8pzX8J1GTLbsp_TH0FgMFWjEABUZ6EvydPDedlfbNu-RxsTDJlQjmL6ViGZcJtU-tAdBmUW4TKpib8xNn-unV2KVfII02f61IKHen8UaRRPG0ByLtncZpLpXkUhyJRlrdipD-WEIeJRKq8m2FqA-lTKm68YVSG1mEShzzTt4qBzA3i3O7y0qJYGg9eRn0SRhhaZHmhdRQatv39I"/>
+<span class="absolute top-4 left-4 mcm-accent-orange px-3 py-1 rounded-lg mcm-shadow-sm font-industrial-mono text-label-md">Limited</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Burnt Orange Lounge</h4>
+<p class="font-industrial-mono text-label-md text-on-surface-variant">Velvet &amp; Dark Cherry</p>
+</div>
+<span class="font-headline-md text-primary">$1,800</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low rounded-lg overflow-hidden mb-6 mcm-shadow border-2 border-outline-variant relative">
+<img alt="Mustard Pendant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sleek, mustard yellow aluminum pendant lamp hanging from a thin black cord. The lamp has a clean, geometric dome shape characteristic of mid-century industrial design. It is positioned over a minimalist dining table in a bright room with warm wood accents. The lighting from the lamp creates a focused, atmospheric glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyCC7kN5XzA1jyJvxsHryPE_zcCCXYz1H1FebaYbisjrPkMfcIGeevrCydjT0pVppzEW7ybZe6iWi6EGn4KjuWnA5AIpcoLIOp7MwVVb3RtZZ-cwAqZ1egagmBqSLqnkXvrS9u0XEUdOnDYeO2bFHBGVCbuQGLw_G6aH3esII2vgY_2WA4pVw563NAxSaxt0lA-UYhnBDxJE-n2x51UjmAUY90tJmSf5DrM280cQpt3CLnT2_83LawXIFej2vyKzooxv1p-bRhP1o"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-primary mb-1">Mustard Pendant</h4>
+<p class="font-industrial-mono text-label-md text-on-surface-variant">Powder Coated Steel</p>
+</div>
+<span class="font-headline-md text-primary">$320</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Info Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[600px] mt-section-gap">
+<div class="md:col-span-2 md:row-span-2 bg-primary-container rounded-lg p-12 flex flex-col justify-end relative overflow-hidden mcm-shadow">
+<span class="font-industrial-mono text-label-md text-on-primary-container mb-4">Established 1954</span>
+<h3 class="font-heritage-heading text-[48px] text-primary leading-tight mb-6">Built to last <br/>generations.</h3>
+<p class="font-body-lg text-on-surface-variant max-w-md">Our craftsmen utilize traditional joinery techniques to ensure every piece we produce meets the standards of the original mid-century masters.</p>
+<div class="absolute -top-12 -right-12 w-48 h-48 border-8 border-primary rounded-full opacity-10"></div>
+</div>
+<div class="md:col-span-2 mcm-accent-mustard rounded-lg p-12 mcm-shadow flex flex-col justify-center">
+<h4 class="font-headline-lg mb-4">Custom Sourcing</h4>
+<p class="font-body-md mb-6">Looking for a specific period piece? Our global network of curators can find that elusive original 1960s sideboard for your space.</p>
+<a class="font-industrial-mono text-label-md underline underline-offset-8" href="#">Start the search</a>
+</div>
+<div class="md:col-span-1 bg-surface-container rounded-lg p-8 mcm-shadow border-2 border-outline-variant flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" data-icon="local_shipping">local_shipping</span>
+<p class="font-industrial-mono text-label-md">Global White-Glove Delivery</p>
+</div>
+<div class="md:col-span-1 bg-surface-container rounded-lg p-8 mcm-shadow border-2 border-outline-variant flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" data-icon="verified">verified</span>
+<p class="font-industrial-mono text-label-md">Authenticity Guaranteed</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-padding py-12 w-full max-w-[1440px] mx-auto gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-heritage-heading text-headline-md text-primary">Aura Spatial</span>
+<p class="font-body-md text-on-surface-variant">© 2024 Aura Spatial. Architectural Minimalism in Digital Form.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity" href="#">The Studio</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity" href="#">Sustainability</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity" href="#">Terms</a>
+<a class="font-body-md text-primary underline" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-lg mcm-accent-orange mcm-shadow-sm flex items-center justify-center cursor-pointer active:scale-95 transition-all">
+<span class="material-symbols-outlined text-surface" data-icon="alternate_email">alternate_email</span>
+</div>
+<div class="w-10 h-10 rounded-lg mcm-accent-mustard mcm-shadow-sm flex items-center justify-center cursor-pointer active:scale-95 transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="share">share</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
