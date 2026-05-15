@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { DiscussionEmbed } from 'disqus-react';
-import { useNavigate } from 'react-router-dom';
 
 const THEMES = [
   { 
@@ -47,7 +46,6 @@ type Step = 'theme' | 'specs' | 'transform' | 'success';
 export default function Explore() {
   const [step, setStep] = useState<Step>('theme');
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   const handleNextStep = () => {
     if (step === 'theme') setStep('specs');
