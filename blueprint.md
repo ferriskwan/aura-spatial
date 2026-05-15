@@ -20,4 +20,6 @@ We are establishing the directory structure for the main application modules wit
 ### Steps
 1. [x] Create feature directories in `src/pages`.
 2. [x] Initialize `blueprint.md`.
-3. [ ] Commit and push changes to GitHub.
+3. [x] Integrate React Router and implement the Explore page flow.
+4. [x] Update external links for Marketplace and Pricing to point to dedicated sub-platforms.
+5. [x] Commit and push changes to GitHub.
