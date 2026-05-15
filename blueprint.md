@@ -7,7 +7,7 @@ Aura Spatial is a unified home renovation platform designed to streamline commun
 The platform currently consists of:
 - **Core Architecture:** Built with React and TypeScript, using Vite as the build tool.
 - **Database:** A PostgreSQL schema (`schema.sql`) defining users, project cases, marketplace inventory, and transactions.
-- **UI/UX:** A foundational landing page (`src/App.tsx`) with modern styling (`styles.css` and `src/App.css`).
+- **UI/UX:** A foundational landing page (`src/App.tsx`) with modern styling (`styles.css` and `src/App.css`), including an integrated Disqus comment section for community feedback.
 - **User Journey:** Documented in `userjourney.md`, outlining the flow from client RFQ to ID bidding, project execution, and marketplace shopping.
 
 ## Current Plan: Feature Directory Setup

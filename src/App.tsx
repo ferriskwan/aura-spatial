@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { DiscussionEmbed } from 'disqus-react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -111,6 +112,22 @@ function App() {
             </li>
           </ul>
         </div>
+      </section>
+
+      <div className="ticks"></div>
+
+      <section id="comments" style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <DiscussionEmbed
+          shortname='pendulum-3'
+          config={
+            {
+              url: window.location.href,
+              identifier: 'aura-spatial-landing',
+              title: 'Aura Spatial Landing Page',
+              language: 'zh_TW'
+            }
+          }
+        />
       </section>
 
       <div className="ticks"></div>
