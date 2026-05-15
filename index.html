@@ -138,31 +138,51 @@
 </header>
 <div class="flex pt-20">
 <!-- SideNavBar -->
-<aside class="h-full w-72 fixed left-0 top-20 z-40 bg-surface-container-low dark:bg-surface-container-high border-r border-outline-variant hidden lg:flex flex-col p-6 gap-4">
-<div class="mb-8">
-<h3 class="font-heritage-heading text-headline-md text-primary">Aesthetic Switcher</h3>
-<p class="font-industrial-mono text-label-md text-on-surface-variant">Select your era</p>
+<aside class="h-full w-72 fixed left-0 top-20 z-40 bg-surface-container-low dark:bg-surface-container-high border-r border-outline-variant hidden lg:flex flex-col p-6 gap-4 overflow-y-auto">
+<div class="mb-4">
+<h3 class="font-heritage-heading text-headline-md text-primary">Start Project</h3>
+<p class="font-industrial-mono text-label-md text-on-surface-variant">Define your scope</p>
 </div>
-<div class="flex flex-col gap-2">
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+
+<div class="flex flex-col gap-4 mb-4">
+    <div>
+        <label class="block font-industrial-mono text-label-md text-on-surface-variant mb-1">Property Type</label>
+        <select class="w-full bg-surface border-2 border-outline-variant rounded-lg focus:ring-0 focus:border-primary p-2 font-body-md text-on-surface">
+            <option>HDB BTO</option>
+            <option>HDB Resale</option>
+            <option>Condominium</option>
+            <option>Landed</option>
+        </select>
+    </div>
+    <div>
+        <label class="block font-industrial-mono text-label-md text-on-surface-variant mb-1">Size (sqm)</label>
+        <input type="number" class="w-full bg-surface border-2 border-outline-variant rounded-lg focus:ring-0 focus:border-primary p-2 font-body-md text-on-surface" placeholder="e.g. 90" />
+    </div>
+</div>
+
+<div class="mb-4">
+<h4 class="font-industrial-mono text-label-md text-on-surface-variant mb-2">Explore Themes</h4>
+<div class="flex flex-col gap-2" id="theme-list">
+<a class="theme-btn flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-2 transition-all font-industrial-mono text-label-md cursor-pointer" data-theme="Japandi" data-image="https://images.unsplash.com/photo-1595514535314-5d8cb9a71221?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
 <span class="material-symbols-outlined" data-icon="spa">spa</span> Japandi
                 </a>
-<a class="flex items-center gap-3 bg-primary-container text-on-primary-container font-bold rounded-lg px-4 py-3 translate-x-1 duration-200 font-industrial-mono text-label-md mcm-shadow-sm" href="#">
+<a class="theme-btn flex items-center gap-3 bg-primary-container text-on-primary-container font-bold rounded-lg px-4 py-2 translate-x-1 duration-200 font-industrial-mono text-label-md mcm-shadow-sm cursor-pointer" data-theme="Mid-Century" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBPp0lr7tzVuEgSO_J-q5iKQEDLJ1hvo8kqK9bvv4rwIPpc8y-pBr_7GmiUS_6E_UrrpyexEYC2zdGWo1XMMkJcB6TUuUGGFpaSL2v0I8aDyuU2XUYkNFewOY9XT36R9R2uWrJQiWCXFXKJDv9fanAZsYBPiGWGeEgK-a8W2qTsBSl33nl1N_MFaXB_U8KF8MEarb_Zp8w41CtgWyx8C6T7SRDejFXHjkDsTXsYiRGUBSQFKsv9BgMYTtlOyTm4SGku_etIEOHYf7E">
 <span class="material-symbols-outlined" data-icon="chair">chair</span> Mid-Century
                 </a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<a class="theme-btn flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-2 transition-all font-industrial-mono text-label-md cursor-pointer" data-theme="Heritage" data-image="https://images.unsplash.com/photo-1600607688960-e095ff83135c?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
 <span class="material-symbols-outlined" data-icon="history">history</span> Heritage
                 </a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<a class="theme-btn flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-2 transition-all font-industrial-mono text-label-md cursor-pointer" data-theme="Industrial" data-image="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
 <span class="material-symbols-outlined" data-icon="factory">factory</span> Industrial
                 </a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 transition-all font-industrial-mono text-label-md" href="#">
+<a class="theme-btn flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-2 transition-all font-industrial-mono text-label-md cursor-pointer" data-theme="Custom" data-image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
 <span class="material-symbols-outlined" data-icon="edit">edit</span> Custom
                 </a>
 </div>
-<div class="mt-auto pt-6">
+</div>
+<div class="mt-auto pt-4">
 <button class="w-full mcm-accent-orange font-industrial-mono text-label-md py-4 rounded-lg mcm-shadow hover:scale-[1.02] transition-transform">
-                    Request Consultation
+                    Proceed to receive quotations
                 </button>
 </div>
 </aside>
@@ -171,11 +191,12 @@
 <section class="px-container-padding py-12 max-w-[1440px] mx-auto">
 <!-- Hero -->
 <div class="relative w-full h-[500px] mb-section-gap rounded-lg overflow-hidden mcm-shadow group">
-<img alt="Mid-Century Interior" class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated mid-century modern living room featuring a rich teak wood sideboard and a classic Eames-style lounge chair. The space is illuminated by warm, direct sunlight casting geometric shadows across a cream-colored wool rug. The walls are a soft off-white, and the room is decorated with a large Monstera plant and a mustard yellow abstract art piece. The overall mood is quiet, architectural, and expertly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPp0lr7tzVuEgSO_J-q5iKQEDLJ1hvo8kqK9bvv4rwIPpc8y-pBr_7GmiUS_6E_UrrpyexEYC2zdGWo1XMMkJcB6TUuUGGFpaSL2v0I8aDyuU2XUYkNFewOY9XT36R9R2uWrJQiWCXFXKJDv9fanAZsYBPiGWGeEgK-a8W2qTsBSl33nl1N_MFaXB_U8KF8MEarb_Zp8w41CtgWyx8C6T7SRDejFXHjkDsTXsYiRGUBSQFKsv9BgMYTtlOyTm4SGku_etIEOHYf7E"/>
-<div class="absolute inset-0 bg-gradient-to-r from-on-surface/60 to-transparent flex flex-col justify-center px-16">
-<span class="mcm-accent-mustard inline-block px-4 py-1 rounded-full text-label-md font-industrial-mono w-fit mb-6">Seasonal Drop</span>
-<h2 class="font-headline-lg text-[64px] text-surface leading-tight mb-6 max-w-2xl">Functionality <br/>Meets Form.</h2>
-<button class="bg-surface text-on-surface font-industrial-mono px-8 py-4 rounded-lg w-fit mcm-shadow-sm hover:mcm-shadow transition-all">Explore Heritage Collection</button>
+<img id="hero-bg" alt="Mid-Century Interior" class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-all duration-500" data-alt="A sophisticated mid-century modern living room featuring a rich teak wood sideboard and a classic Eames-style lounge chair. The space is illuminated by warm, direct sunlight casting geometric shadows across a cream-colored wool rug. The walls are a soft off-white, and the room is decorated with a large Monstera plant and a mustard yellow abstract art piece. The overall mood is quiet, architectural, and expertly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPp0lr7tzVuEgSO_J-q5iKQEDLJ1hvo8kqK9bvv4rwIPpc8y-pBr_7GmiUS_6E_UrrpyexEYC2zdGWo1XMMkJcB6TUuUGGFpaSL2v0I8aDyuU2XUYkNFewOY9XT36R9R2uWrJQiWCXFXKJDv9fanAZsYBPiGWGeEgK-a8W2qTsBSl33nl1N_MFaXB_U8KF8MEarb_Zp8w41CtgWyx8C6T7SRDejFXHjkDsTXsYiRGUBSQFKsv9BgMYTtlOyTm4SGku_etIEOHYf7E"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent flex flex-col justify-center px-16">
+<span class="mcm-accent-mustard inline-block px-4 py-1 rounded-full text-label-md font-industrial-mono w-fit mb-6">Initiate Your Journey</span>
+<h2 class="font-headline-lg text-[64px] text-surface leading-tight mb-6 max-w-2xl">Bring Your Dream<br/>Space to Life.</h2>
+<p class="font-body-lg text-surface mb-8 max-w-xl">Share your property details, explore curated themes, and let Aura Spatial match you with top interior designers for competitive quotations.</p>
+<button class="bg-surface text-on-surface font-industrial-mono px-8 py-4 rounded-lg w-fit mcm-shadow-sm hover:mcm-shadow transition-all">Start Your RFQ Now</button>
 </div>
 </div>
 <!-- Product Grid -->
@@ -273,4 +294,41 @@
 </footer>
 </main>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const heroImage = document.getElementById('hero-bg');
+
+    themeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Remove active classes from all buttons
+            themeButtons.forEach(b => {
+                b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold', 'translate-x-1', 'mcm-shadow-sm');
+                b.classList.add('text-on-surface-variant', 'hover:bg-surface-variant');
+            });
+
+            // Add active classes to clicked button
+            btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'translate-x-1', 'mcm-shadow-sm');
+            btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant');
+
+            // Update hero image
+            const newImageSrc = btn.getAttribute('data-image');
+            const themeName = btn.getAttribute('data-theme');
+            
+            if (newImageSrc && heroImage) {
+                // Add a smooth fade out
+                heroImage.style.opacity = 0;
+                setTimeout(() => {
+                    heroImage.src = newImageSrc;
+                    heroImage.alt = `${themeName} Interior`;
+                    // Fade back in
+                    heroImage.style.opacity = 1;
+                }, 300); // Wait for fade out to complete
+            }
+        });
+    });
+});
+</script>
 </body></html>
