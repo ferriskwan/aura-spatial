@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "disqus-react": "^1.1.7",
+    "lucide-react": "^1.16.0",
+    "motion": "^12.38.0",
+    "prop-types": "^15.8.1",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.15.1",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
